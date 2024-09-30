@@ -9,6 +9,7 @@ public class ShiftArray {
 		// finds an equivalent shift amount. If shift is less
 		// than the size of the array, this expression leaves
 		// shift unchanged:
+
 		shift = shift % arr.length;
 
 		int[] newArray = new int[arr.length];
@@ -18,7 +19,7 @@ public class ShiftArray {
 			newArray[index] = arr[i];
 		}
 
-		arr = newArray;
+		System.arraycopy(newArray, 0, arr, 0, arr.length);
 	}
 
 
@@ -26,6 +27,7 @@ public class ShiftArray {
 		try{
 			int[] a = {3, 4, 5, 6};
 			int shiftAmount = Integer.valueOf(args[0]);
+			// System.out.println("Shift Amount: " + shiftAmount);
 			if(shiftAmount < 0){
 				System.out.println("Sorry, shift about must be positive.");
 				return;
